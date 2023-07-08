@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Ground
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: d24e7e0b75e1a244bb9687d6fd4315ef, type: 3}
-  m_DefaultGameObject: {fileID: 6077192701307614413, guid: 1859f4f475ae12d42808d576f02dbb17, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  m_DefaultGameObject: {fileID: 6077192701307614413, guid: 7a3e73380d5b8e548a439f07324ebc8a, type: 3}
   m_DefaultColliderType: 2
   m_TilingRules: []
