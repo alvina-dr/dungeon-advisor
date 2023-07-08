@@ -23,6 +23,15 @@ public class Caretaker : MonoBehaviour
         _interactable.Interact();
         interactableList.Remove(_interactable);
     }
+
+    public void EnterRoom(Room _room)
+    {
+        currentRoom = _room;
+        if (GPCtrl.instance.currentHero.currentRoom == _room)
+        {
+            GPCtrl.instance.GameOver();
+        }
+    }
     #endregion
 
     #region UnityAPI

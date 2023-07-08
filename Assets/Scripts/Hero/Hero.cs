@@ -21,6 +21,10 @@ public abstract class Hero : MonoBehaviour
         exploredRoomList.Add(_room);
         currentRoom = _room;
         transform.position = currentRoom.roomCenter.position;
+        if (GPCtrl.instance.caretaker.currentRoom == _room)
+        {
+            GPCtrl.instance.GameOver();
+        }
     }
 
     private void Update()

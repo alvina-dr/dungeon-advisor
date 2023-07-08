@@ -11,6 +11,7 @@ public class GPCtrl : MonoBehaviour
     public Room startRoom;
     public List<HeroData> heroDataList;
     public Hero currentHero;
+    public Caretaker caretaker;
 
     void Awake()
     {
@@ -59,5 +60,10 @@ public class GPCtrl : MonoBehaviour
     public void EndWave()
     {
         Debug.Log("END GAME");
+    }
+
+    public void GameOver()
+    {
+
     }
 }
