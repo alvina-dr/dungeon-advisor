@@ -6,21 +6,36 @@ using UnityEngine.Events;
 public class Caretaker : MonoBehaviour
 {
     #region Fields
+    
     public Vector3 direction;
+    
     public float speed;
+    
     public Rigidbody rb;
+    
     public List<Interactable> interactableList;
+    
     public Room currentRoom;
+
+    [SerializeField] private GameObject _movementParticles;
+
+    [SerializeField] private Transform _particlesPosition;
+
+    public float timeBtwTrails;
+    
     #endregion
 
     #region Methods
     public void Interact()
     {
         if (interactableList[interactableList.Count - 1] == null) return;
+        
         if (interactableList[interactableList.Count - 1].activated) return;
-        Debug.Log(interactableList[interactableList.Count - 1].name);
+
         Interactable _interactable = interactableList[interactableList.Count - 1];
+        
         _interactable.Interact();
+        
         interactableList.Remove(_interactable);
     }
     #endregion
@@ -32,6 +47,20 @@ public class Caretaker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
+        }
+
+        if (direction != Vector3.zero)
+        {
+            if (timeBtwTrails <= 0)
+            { 
+                Instantiate(_movementParticles, _particlesPosition);
+
+                timeBtwTrails = 0.5f;
+            }
+            else
+            {
+                timeBtwTrails -= Time.deltaTime;
+            }
         }
     }
 
