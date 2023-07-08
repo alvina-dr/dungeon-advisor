@@ -10,12 +10,18 @@ public class Caretaker : MonoBehaviour
     public float speed;
     public Rigidbody rb;
     public List<Interactable> interactableList;
+    public Room currentRoom;
     #endregion
 
     #region Methods
     public void Interact()
     {
-
+        if (interactableList[interactableList.Count - 1] == null) return;
+        if (interactableList[interactableList.Count - 1].activated) return;
+        Debug.Log(interactableList[interactableList.Count - 1].name);
+        Interactable _interactable = interactableList[interactableList.Count - 1];
+        _interactable.Interact();
+        interactableList.Remove(_interactable);
     }
     #endregion
 
@@ -31,7 +37,7 @@ public class Caretaker : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(direction.x * speed, 0, direction.z * speed);
+        rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +47,16 @@ public class Caretaker : MonoBehaviour
         {
             if (!interactableList.Contains(_interactable))
                 interactableList.Add(_interactable);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Interactable _interactable = other.GetComponent<Interactable>();
+        if (_interactable != null)
+        {
+            if (!interactableList.Contains(_interactable))
+                interactableList.Remove(_interactable);
         }
     }
     #endregion

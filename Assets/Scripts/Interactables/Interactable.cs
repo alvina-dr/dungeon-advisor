@@ -6,7 +6,7 @@ public abstract class Interactable : MonoBehaviour
 {
 
     #region Fields
-
+    public bool activated;
     #endregion
 
     #region Methods 
