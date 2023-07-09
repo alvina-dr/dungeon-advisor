@@ -39,4 +39,9 @@ public abstract class Hero : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= data.timePerRoom) ChooseNextRoom();
     }
+
+    private void Start()
+    {
+        allRoomList = GPCtrl.instance.roomList;
+    }
 }
