@@ -30,4 +30,16 @@ public class Trap : Interactable
         activatedModel.SetActive(false);
         deactivatedModel.SetActive(true);
     }
+    private void Start()
+    {
+        if (activated)
+        {
+            activatedModel.SetActive(true);
+            deactivatedModel.SetActive(false);
+        } else
+        {
+            activatedModel.SetActive(false);
+            deactivatedModel.SetActive(true);
+        }
+    }
 }
