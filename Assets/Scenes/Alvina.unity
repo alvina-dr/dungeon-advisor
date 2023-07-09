@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1042,7 +1042,7 @@ Transform:
   m_Children:
   - {fileID: 2046611098}
   m_Father: {fileID: 1511496462}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!1 &322829329
 GameObject:
@@ -1060,7 +1060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &322829330
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ Transform:
   m_Children:
   - {fileID: 471625958}
   m_Father: {fileID: 7873758150332114470}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!114 &322829331
 MonoBehaviour:
@@ -1947,7 +1947,7 @@ Transform:
   m_Children:
   - {fileID: 1690660271}
   m_Father: {fileID: 3984505974414048302}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!114 &734886648
 MonoBehaviour:
@@ -2090,7 +2090,7 @@ Transform:
   m_Children:
   - {fileID: 1647664159}
   m_Father: {fileID: 695260569469875108}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!114 &902207187
 MonoBehaviour:
@@ -2465,14 +2465,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294256095}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.4460149, y: -0.22957525, z: 0.11950932, w: 0.85678667}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 55, y: -30, z: 0}
 --- !u!114 &1294256098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,7 +3107,7 @@ Transform:
   m_Children:
   - {fileID: 1976402674}
   m_Father: {fileID: 8145177616670151319}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!114 &1656971765
 MonoBehaviour:
@@ -3323,7 +3323,7 @@ Transform:
   m_Children:
   - {fileID: 657972575}
   m_Father: {fileID: 3984505974490704285}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 58.95, y: 0, z: 0}
 --- !u!1001 &1941601442
 PrefabInstance:
