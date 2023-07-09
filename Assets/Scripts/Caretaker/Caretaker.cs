@@ -7,7 +7,7 @@ public class Caretaker : MonoBehaviour
     #region Fields
     
     public Vector3 direction;
-    
+
     public float speed;
     
     public Rigidbody rb;
