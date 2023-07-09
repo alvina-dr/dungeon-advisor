@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using Cinemachine;
 
 public class Caretaker : MonoBehaviour
@@ -25,6 +23,8 @@ public class Caretaker : MonoBehaviour
     public float timeBtwTrails;
 
     public CinemachineBrain cinemachineBrain;
+
+    public bool blockPlayerMovement = false;
     
     #endregion
 
@@ -57,6 +57,7 @@ public class Caretaker : MonoBehaviour
     #region UnityAPI
     void Update()
     {
+        if (blockPlayerMovement) return;
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -66,7 +67,7 @@ public class Caretaker : MonoBehaviour
         if (direction != Vector3.zero)
         {
             if (timeBtwTrails <= 0)
-            { 
+            {
                 Instantiate(_movementParticles, _particlesPosition);
 
                 timeBtwTrails = 0.5f;

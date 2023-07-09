@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Cinemachine;
+using DG.Tweening;
 
 public class ArrowGames : MonoBehaviour
 {
@@ -10,13 +13,14 @@ public class ArrowGames : MonoBehaviour
         [SerializeField] public GameObject[] arrows;
     }
     public Arrows arrows;
+    public CinemachineVirtualCamera virtualCamera;
+
     private int[] arrowArray = new int[9];
-
     private List<int> nums = new List<int>(); 
-
     private int currentArrow = 0;
     private float timer = 0;
     private GameObject[] stockArrows = new GameObject[9];
+    public Transform arrowParent;
 
     void Start()
     {
@@ -36,11 +40,10 @@ public class ArrowGames : MonoBehaviour
         for(int i = 0; i < 9; i++){
             debug+= arrowArray[i] + " ";
         } 
-        Debug.Log(debug);
-     
+        
         for(int i = 0; i < 9; i++){
             GameObject prefabArrow = arrows.arrows[arrowArray[i]];
-            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, 0, 0), prefabArrow.transform.rotation);
+            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, arrowParent.position.y, arrowParent.position.z), prefabArrow.transform.rotation, arrowParent);
         }
     }
 
@@ -53,13 +56,18 @@ public class ArrowGames : MonoBehaviour
             }
         } else {
             if(currentArrow == 9) {
-                //mini jeu fini
-            } else {            
-                if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+                virtualCamera.gameObject.SetActive(false);
+                GPCtrl.instance.currentInteractable.Activate();
+                GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(true);
+                SceneManager.UnloadSceneAsync("TrapMinigame");
+                GPCtrl.instance.caretaker.blockPlayerMovement = false;
+            }
+            else {            
+                if(Input.GetKeyDown(KeyCode.Q)) {
                     updateArrows(0);
-                } else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+                } else if(Input.GetKeyDown(KeyCode.D)) {
                     updateArrows(1);
-                } else if(Input.GetKeyDown(KeyCode.RightArrow)) {
+                } else if(Input.GetKeyDown(KeyCode.Z)) {
                     updateArrows(2);
                 }
             }
@@ -68,6 +76,7 @@ public class ArrowGames : MonoBehaviour
     private void updateArrows(int numArrow) {
         if(arrowArray[currentArrow] == numArrow) {
             // On déplace la fleche
+            arrowParent.DOMoveX(arrowParent.position.x - 2, .4f);
             stockArrows[currentArrow].SetActive(false);
             currentArrow++;
             timer = 0.2f;

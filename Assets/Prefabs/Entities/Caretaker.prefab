@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &4930336492258061576
+--- !u!1 &2367646779300992494
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,23 +105,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4261836421411980536}
+  - component: {fileID: 8045510764347312686}
   m_Layer: 0
-  m_Name: Particle Position
+  m_Name: Particles Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4261836421411980536
+--- !u!4 &8045510764347312686
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930336492258061576}
+  m_GameObject: {fileID: 2367646779300992494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,7 +162,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5494244953357042521}
-  - {fileID: 4261836421411980536}
+  - {fileID: 8045510764347312686}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -247,8 +247,9 @@ MonoBehaviour:
   interactableList: []
   currentRoom: {fileID: 0}
   _movementParticles: {fileID: 6922864656176287357, guid: d8f80104e0253b84896da5d14b0f4d1f, type: 3}
-  _particlesPosition: {fileID: 4261836421411980536}
+  _particlesPosition: {fileID: 8045510764347312686}
   timeBtwTrails: 0
+  cinemachineBrain: {fileID: 0}
 --- !u!54 &5453261232162327207
 Rigidbody:
   m_ObjectHideFlags: 0

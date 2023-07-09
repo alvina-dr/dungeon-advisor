@@ -13,6 +13,13 @@ public abstract class Interactable : MonoBehaviour
 
     public abstract void Interact();
 
-    public abstract void Deactivate();
+    public virtual void Activate()
+    {
+        activated = true;
+    }
+    public virtual void Deactivate()
+    {
+
+    }
     #endregion
 }

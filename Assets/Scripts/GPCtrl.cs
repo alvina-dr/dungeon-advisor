@@ -12,6 +12,7 @@ public class GPCtrl : MonoBehaviour
     public List<HeroData> heroDataList;
     public Hero currentHero;
     public Caretaker caretaker;
+    public Interactable currentInteractable;
 
     void Awake()
     {
