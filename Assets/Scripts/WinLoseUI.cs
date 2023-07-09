@@ -9,8 +9,6 @@ public class WinLoseUI : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private Transform _spawnPosition;
-
     [SerializeField] private GameObject _winUI;
     
     [SerializeField] private GameObject _loseUI;
@@ -34,9 +32,7 @@ public class WinLoseUI : MonoBehaviour
     public void SpawnWinGameUI()
     {
         _caretaker.blockPlayerMovement = true;
-        
-        Instantiate(_winUI, _spawnPosition);
-        
+
         _winUI.transform.localScale = Vector3.zero;
         
         _winUI.SetActive(true);
@@ -48,8 +44,6 @@ public class WinLoseUI : MonoBehaviour
     public void SpawnLoseUI()
     {
         _caretaker.blockPlayerMovement = true;
-        
-        Instantiate(_loseUI, _spawnPosition);
         
         _loseUI.transform.localScale = Vector3.zero;
         
@@ -86,6 +80,12 @@ public class WinLoseUI : MonoBehaviour
         {
             SceneManager.LoadScene(0);  
         }
+    }
+
+    public void RetryGame()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
     }
 
     #endregion
