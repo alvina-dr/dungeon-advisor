@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2193,6 +2193,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369085446}
     m_Modifications:
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369085447}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinLoseUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1380128178864264429, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2284,6 +2312,34 @@ PrefabInstance:
     - target: {fileID: 1380128178864264430, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369085447}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinLoseUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863767534568659202, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c773930750bd854f93559dfbcd0b765, type: 3}
@@ -3094,6 +3150,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369085446}
     m_Modifications:
+    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369085447}
+    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinLoseUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1380128178864264429, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
