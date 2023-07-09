@@ -8283,6 +8283,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5453261232162327896, guid: 1daff502ab03e2046907528e676737d1, type: 3}
+      propertyPath: currentRoom
+      value: 
+      objectReference: {fileID: 1511496463}
     - target: {fileID: 5453261232162327897, guid: 1daff502ab03e2046907528e676737d1, type: 3}
       propertyPath: m_Name
       value: Caretaker

@@ -11,9 +11,11 @@ public class Trap : Interactable
         //animation repair
         Debug.Log("TRAP REPAIRED");
         //Launch mini game
-        SceneManager.LoadSceneAsync("TrapMinigame", LoadSceneMode.Additive);
+        SceneManager.LoadScene("TrapMinigame", LoadSceneMode.Additive);
+        GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(false);
+        GPCtrl.instance.caretaker.blockPlayerMovement = true;
     }
-    
+
 
     public override void Deactivate() {
         activated = false;

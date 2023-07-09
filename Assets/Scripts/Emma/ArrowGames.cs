@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class ArrowGames : MonoBehaviour
@@ -18,6 +19,7 @@ public class ArrowGames : MonoBehaviour
     private int currentArrow = 0;
     private float timer = 0;
     private GameObject[] stockArrows = new GameObject[9];
+    public Transform arrowParent;
 
     void Start()
     {
@@ -41,7 +43,7 @@ public class ArrowGames : MonoBehaviour
      
         for(int i = 0; i < 9; i++){
             GameObject prefabArrow = arrows.arrows[arrowArray[i]];
-            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, 0, 0), prefabArrow.transform.rotation);
+            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, arrowParent.position.y, 0), prefabArrow.transform.rotation, arrowParent);
         }
     }
 
@@ -54,8 +56,12 @@ public class ArrowGames : MonoBehaviour
             }
         } else {
             if(currentArrow == 9) {
-                //mini jeu fini
-            } else {            
+                virtualCamera.gameObject.SetActive(false);
+                GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(true);
+                SceneManager.UnloadSceneAsync("TrapMinigame");
+                GPCtrl.instance.caretaker.blockPlayerMovement = false;
+            }
+            else {            
                 if(Input.GetKeyDown(KeyCode.LeftArrow)) {
                     updateArrows(0);
                 } else if(Input.GetKeyDown(KeyCode.DownArrow)) {
