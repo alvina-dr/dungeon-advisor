@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class WinLoseUI : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class WinLoseUI : MonoBehaviour
     [SerializeField] private GameObject _winUI;
     
     [SerializeField] private GameObject _loseUI;
+
+    private Caretaker _caretaker;
 
     #endregion
 
@@ -30,6 +33,8 @@ public class WinLoseUI : MonoBehaviour
 
     public void SpawnWinGameUI()
     {
+        _caretaker.blockPlayerMovement = true;
+        
         Instantiate(_winUI, _spawnPosition);
         
         _winUI.transform.localScale = Vector3.zero;
@@ -42,6 +47,8 @@ public class WinLoseUI : MonoBehaviour
 
     public void SpawnLoseUI()
     {
+        _caretaker.blockPlayerMovement = true;
+        
         Instantiate(_loseUI, _spawnPosition);
         
         _loseUI.transform.localScale = Vector3.zero;
@@ -58,12 +65,26 @@ public class WinLoseUI : MonoBehaviour
         {
             _winUI.transform.DOScale(1.1f, 0.4f);
             _winUI.transform.DOScale(0f, 0.4f);
+            
+            _winUI.SetActive(false);
         }
 
         if (_loseUI.activeInHierarchy)
         {
             _loseUI.transform.DOScale(1.1f, 0.4f);
             _loseUI.transform.DOScale(0f, 0.4f);
+            
+            _loseUI.SetActive(false);
+        }
+    }
+
+    public void BackToMainMenu()
+    {
+        CloseUI();
+
+        if (!_winUI.activeInHierarchy || !_loseUI.activeInHierarchy)
+        {
+            SceneManager.LoadScene(0);  
         }
     }
 
