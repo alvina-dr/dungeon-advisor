@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 5135528615141417197}
   - component: {fileID: 1718645045323393978}
   - component: {fileID: 8274869076986210282}
-  - component: {fileID: 104984894235177243}
   m_Layer: 0
   m_Name: RightDoor2
   m_TagString: Untagged
@@ -183,19 +182,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &104984894235177243
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6077192701307614413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4279707430320654985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209,15 +195,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalPosition.x

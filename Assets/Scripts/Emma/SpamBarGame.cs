@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SpamBarGame : MonoBehaviour
@@ -57,7 +58,9 @@ public class Fill {
 
         if (fillAmount > FILL_MAX) {
             fillAmount = FILL_MAX;
-            Debug.Log("Bravo, c'est gagné !");
+            GPCtrl.instance.currentInteractable.Activate();
+            SceneManager.UnloadSceneAsync("Emma");
+            GPCtrl.instance.caretaker.blockPlayerMovement = false;
         }
     }
 

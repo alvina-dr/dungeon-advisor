@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GPCtrl : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class GPCtrl : MonoBehaviour
     public Hero currentHero;
     public Caretaker caretaker;
     public Interactable currentInteractable;
-    private WinLoseUI _winLoseUI;
+    public WinLoseUI _winLoseUI;
+    public UINotif UINotif;
 
     void Awake()
     {
@@ -69,7 +71,9 @@ public class GPCtrl : MonoBehaviour
     {
         Debug.Log("END WAVE");
         //Score Calculation
+        UINotif.Pop("SCORE : " + currentHero.usedInteractableList.Count * 5);
         Destroy(currentHero);
+        DOVirtual.DelayedCall(180f, () => LaunchHero(heroDataList[Random.Range(0, heroDataList.Count)]));
     }
 
     public void GameOver()
