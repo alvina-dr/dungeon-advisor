@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using Cinemachine;
 
 public class Caretaker : MonoBehaviour
@@ -66,7 +64,7 @@ public class Caretaker : MonoBehaviour
         if (direction != Vector3.zero)
         {
             if (timeBtwTrails <= 0)
-            { 
+            {
                 Instantiate(_movementParticles, _particlesPosition);
 
                 timeBtwTrails = 0.5f;
