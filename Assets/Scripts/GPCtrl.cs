@@ -13,6 +13,7 @@ public class GPCtrl : MonoBehaviour
     public Hero currentHero;
     public Caretaker caretaker;
     public Interactable currentInteractable;
+    private WinLoseUI _winLoseUI;
 
     void Awake()
     {
@@ -67,6 +68,11 @@ public class GPCtrl : MonoBehaviour
 
     public void GameOver()
     {
+        _winLoseUI.SpawnLoseUI();
+    }
 
+    public void GameWin()
+    {
+        _winLoseUI.SpawnWinGameUI();
     }
 }
