@@ -25,6 +25,11 @@ public class WinLoseUI : MonoBehaviour
         _loseUI.SetActive(false);
     }
 
+    private void Start()
+    {
+        _caretaker = GPCtrl.instance.caretaker;
+    }
+
     #endregion
 
     #region Logic Methods
@@ -46,11 +51,11 @@ public class WinLoseUI : MonoBehaviour
         _caretaker.blockPlayerMovement = true;
         
         _loseUI.transform.localScale = Vector3.zero;
-        
-        _winUI.SetActive(true);
 
-        _winUI.transform.DOScale(1.1f, 0.4f);
-        _winUI.transform.DOScale(1, 0.4f);
+        _loseUI.SetActive(true);
+
+        _loseUI.transform.DOScale(1.1f, 0.4f);
+        _loseUI.transform.DOScale(1, 0.4f);
     }
 
     private void CloseUI()
