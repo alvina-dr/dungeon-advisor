@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class Caretaker : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Caretaker : MonoBehaviour
     [SerializeField] private Transform _particlesPosition;
 
     public float timeBtwTrails;
+
+    public CinemachineBrain cinemachineBrain;
     
     #endregion
 
@@ -41,7 +44,9 @@ public class Caretaker : MonoBehaviour
 
     public void EnterRoom(Room _room)
     {
+        if (currentRoom != null) currentRoom.virtualCamera.gameObject.SetActive(false); 
         currentRoom = _room;
+        currentRoom.virtualCamera.gameObject.SetActive(true);
         if (GPCtrl.instance.currentHero.currentRoom == _room)
         {
             GPCtrl.instance.GameOver();
