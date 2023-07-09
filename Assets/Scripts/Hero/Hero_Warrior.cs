@@ -16,4 +16,11 @@ public class Hero_Warrior : Hero
         }
         GPCtrl.instance.EndWave();
     }
+
+    public override void ExploreRoom(Room _room)
+    {
+        //if ()
+        //condition d'arrêt d'exploration
+        base.ExploreRoom(_room);
+    }
 }
