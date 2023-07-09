@@ -21,5 +21,7 @@ public abstract class Interactable : MonoBehaviour
     {
 
     }
+
+
     #endregion
 }
