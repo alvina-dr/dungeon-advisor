@@ -25,6 +25,8 @@ public class Caretaker : MonoBehaviour
     public CinemachineBrain cinemachineBrain;
 
     public bool blockPlayerMovement = false;
+
+    public GameObject caretakerMesh;
     
     #endregion
 
@@ -59,6 +61,7 @@ public class Caretaker : MonoBehaviour
     {
         if (blockPlayerMovement) return;
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        if (direction != Vector3.zero) caretakerMesh.transform.forward = direction;
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
