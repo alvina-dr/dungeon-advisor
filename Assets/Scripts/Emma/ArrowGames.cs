@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using DG.Tweening;
 
 public class ArrowGames : MonoBehaviour
 {
@@ -39,11 +40,10 @@ public class ArrowGames : MonoBehaviour
         for(int i = 0; i < 9; i++){
             debug+= arrowArray[i] + " ";
         } 
-        Debug.Log(debug);
-     
+        
         for(int i = 0; i < 9; i++){
             GameObject prefabArrow = arrows.arrows[arrowArray[i]];
-            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, arrowParent.position.y, 0), prefabArrow.transform.rotation, arrowParent);
+            stockArrows[i] = Instantiate(prefabArrow, new Vector3(2*i, arrowParent.position.y, arrowParent.position.z), prefabArrow.transform.rotation, arrowParent);
         }
     }
 
@@ -75,6 +75,7 @@ public class ArrowGames : MonoBehaviour
     private void updateArrows(int numArrow) {
         if(arrowArray[currentArrow] == numArrow) {
             // On déplace la fleche
+            arrowParent.DOMoveX(arrowParent.position.x - 2, .4f);
             stockArrows[currentArrow].SetActive(false);
             currentArrow++;
             timer = 0.2f;
