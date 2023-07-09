@@ -17,7 +17,7 @@ public abstract class Hero : MonoBehaviour
         timer = 0;
         previousRoom = currentRoom;
     }
-    public void ExploreRoom(Room _room)
+    public virtual void ExploreRoom(Room _room)
     {
         exploredRoomList.Add(_room);
         currentRoom = _room;
