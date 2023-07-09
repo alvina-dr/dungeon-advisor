@@ -57,16 +57,17 @@ public class ArrowGames : MonoBehaviour
         } else {
             if(currentArrow == 9) {
                 virtualCamera.gameObject.SetActive(false);
+                GPCtrl.instance.currentInteractable.Activate();
                 GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(true);
                 SceneManager.UnloadSceneAsync("TrapMinigame");
                 GPCtrl.instance.caretaker.blockPlayerMovement = false;
             }
             else {            
-                if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+                if(Input.GetKeyDown(KeyCode.Q)) {
                     updateArrows(0);
-                } else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+                } else if(Input.GetKeyDown(KeyCode.D)) {
                     updateArrows(1);
-                } else if(Input.GetKeyDown(KeyCode.RightArrow)) {
+                } else if(Input.GetKeyDown(KeyCode.Z)) {
                     updateArrows(2);
                 }
             }
