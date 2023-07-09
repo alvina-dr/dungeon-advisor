@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1718645045323393978}
   - component: {fileID: 8274869076986210282}
   m_Layer: 0
-  m_Name: RightDoor2
+  m_Name: RightDoor4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,19 +219,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7072302
+      value: -0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7069834
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee80285cd72f1b648bc1bf52b6d5e4a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
