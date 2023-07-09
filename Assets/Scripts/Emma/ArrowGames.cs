@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ArrowGames : MonoBehaviour
 {
@@ -10,10 +11,10 @@ public class ArrowGames : MonoBehaviour
         [SerializeField] public GameObject[] arrows;
     }
     public Arrows arrows;
+    public CinemachineVirtualCamera virtualCamera;
+
     private int[] arrowArray = new int[9];
-
     private List<int> nums = new List<int>(); 
-
     private int currentArrow = 0;
     private float timer = 0;
     private GameObject[] stockArrows = new GameObject[9];
