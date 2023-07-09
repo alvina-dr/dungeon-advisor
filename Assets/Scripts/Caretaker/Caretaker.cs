@@ -23,6 +23,8 @@ public class Caretaker : MonoBehaviour
     public bool blockPlayerMovement = false;
 
     public GameObject caretakerMesh;
+
+    public AudioSource footstepsSound;
     
     #endregion
 
@@ -61,6 +63,15 @@ public class Caretaker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
+        }
+
+         if (direction != Vector3.zero)
+        {
+            footstepsSound.enabled = true;
+        }
+        else
+        {
+            footstepsSound.enabled = false;
         }
     }
 
