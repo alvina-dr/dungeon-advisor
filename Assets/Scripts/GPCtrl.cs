@@ -59,7 +59,9 @@ public class GPCtrl : MonoBehaviour
 
     public void EndWave()
     {
-        Debug.Log("END GAME");
+        Debug.Log("END WAVE");
+        //Score Calculation
+        Destroy(currentHero);
     }
 
     public void GameOver()

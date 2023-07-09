@@ -10,6 +10,7 @@ public abstract class Hero : MonoBehaviour
     public Room nextRoom;
     public List<Room> allRoomList;
     public List<Room> exploredRoomList;
+    public List<Interactable> usedInteractableList;
     public float timer;
 
     public virtual void ChooseNextRoom() {
@@ -21,6 +22,12 @@ public abstract class Hero : MonoBehaviour
         exploredRoomList.Add(_room);
         currentRoom = _room;
         transform.position = currentRoom.roomCenter.position;
+        List<Interactable> _activatedInteractables = currentRoom.interactableList.FindAll(x => x.activated);
+        for (int i = 0; i < _activatedInteractables.Count; i++)
+        {
+            usedInteractableList.Add(_activatedInteractables[i]);
+        }
+        //MAKE ROOM MENACE
         if (GPCtrl.instance.caretaker.currentRoom == _room)
         {
             GPCtrl.instance.GameOver();
