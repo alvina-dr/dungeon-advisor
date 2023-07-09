@@ -12,7 +12,9 @@ public class UINotif : MonoBehaviour
     public void Pop(string _text)
     {
         text.text = _text;
-        canvas.DOFade(1, .3f);
-        DOVirtual.DelayedCall(1, () => canvas.DOFade(0, .3f));
+        canvas.DOFade(1, .3f).OnComplete(() =>
+        {
+            DOVirtual.DelayedCall(3f, () => canvas.DOFade(0, .3f));
+        });
     }
 }

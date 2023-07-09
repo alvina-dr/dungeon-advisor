@@ -19,8 +19,7 @@ public class Hero_Warrior : Hero
 
     public override void ExploreRoom(Room _room)
     {
-        //if ()
-        //condition d'arrêt d'exploration
+        if (_room.interactableList.Count == 0) GPCtrl.instance.EndWave();
         base.ExploreRoom(_room);
     }
 }
