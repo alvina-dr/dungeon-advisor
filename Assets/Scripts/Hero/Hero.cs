@@ -26,6 +26,7 @@ public abstract class Hero : MonoBehaviour
         for (int i = 0; i < _activatedInteractables.Count; i++)
         {
             usedInteractableList.Add(_activatedInteractables[i]);
+            _activatedInteractables[i].Deactivate();
         }
         //MAKE ROOM MENACE
         if (GPCtrl.instance.caretaker.currentRoom == _room)
