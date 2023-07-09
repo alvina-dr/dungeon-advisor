@@ -15,7 +15,7 @@ public class GPCtrl : MonoBehaviour
     public Hero currentHero;
     public Caretaker caretaker;
     public Interactable currentInteractable;
-    private WinLoseUI _winLoseUI;
+    public WinLoseUI _winLoseUI;
     public UINotif UINotif;
 
     void Awake()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3131885922487269018}
   - component: {fileID: 3131885922487269019}
   - component: {fileID: 3131885922487269015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeroWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 3131885922487269020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.93, y: 0.49, z: 3.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba4c54722421f0d44ab10def1a312a8e, type: 2}
+  - {fileID: 2100000, guid: 1ec93a0e317997842a5680e3e906b45f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d58a9e84666348b98c831360625f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  previousRoom: {fileID: 0}
   currentRoom: {fileID: 0}
   nextRoom: {fileID: 0}
   allRoomList: []
   exploredRoomList: []
+  usedInteractableList: []
+  timer: 0
