@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class WinLoseUI : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WinLoseUI : MonoBehaviour
     [SerializeField] private GameObject _winUI;
     
     [SerializeField] private GameObject _loseUI;
+    [SerializeField] private TextMeshProUGUI _scoreText;
 
     private Caretaker _caretaker;
 
@@ -44,6 +46,13 @@ public class WinLoseUI : MonoBehaviour
 
         _winUI.transform.DOScale(1.1f, 0.4f);
         _winUI.transform.DOScale(1, 0.4f);
+        int finalScore = 0;
+        for (int i = 0; i < GPCtrl.instance.scoreList.Count; i++)
+        {
+            finalScore += GPCtrl.instance.scoreList[i];
+        }
+
+        _scoreText.text = finalScore.ToString();
     }
 
     public void SpawnLoseUI()

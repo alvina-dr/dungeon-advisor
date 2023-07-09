@@ -6897,6 +6897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _winUI: {fileID: 1476266900}
   _loseUI: {fileID: 1027635344}
+  _scoreText: {fileID: 1448046593}
 --- !u!1 &412767920
 GameObject:
   m_ObjectHideFlags: 0
@@ -15896,6 +15897,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8025166434504714707, guid: a768e807ba2068c42a3a40942d1b0bdc, type: 3}
   m_PrefabInstance: {fileID: 1432611977}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1448046593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1448046593, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
+  m_PrefabInstance: {fileID: 1476266898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1476266898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15907,18 +15919,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 369085447}
-    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WinLoseUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380128178081692316, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1380128178864264429, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16006,10 +16006,6 @@ PrefabInstance:
     - target: {fileID: 1380128178864264430, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
       propertyPath: m_Name
       value: Win Game Menu (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380128178864264430, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f271e2bd9d744b7468780487a1659e86, type: 3}
