@@ -9,7 +9,7 @@ public class Mob : Interactable
     public GameObject deactivatedModel;
     public override void Interact()
     {
-        SceneManager.LoadScene("TrapMinigame", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Emma", LoadSceneMode.Additive);
         GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(false);
         GPCtrl.instance.caretaker.blockPlayerMovement = true;
         GPCtrl.instance.currentInteractable = this;

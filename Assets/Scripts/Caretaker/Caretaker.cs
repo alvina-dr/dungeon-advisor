@@ -16,15 +16,13 @@ public class Caretaker : MonoBehaviour
     
     public Room currentRoom;
 
-    [SerializeField] private GameObject _movementParticles;
-
-    [SerializeField] private Transform _particlesPosition;
-
     public float timeBtwTrails;
 
     public CinemachineBrain cinemachineBrain;
 
     public bool blockPlayerMovement = false;
+
+    public GameObject caretakerMesh;
     
     #endregion
 
@@ -59,23 +57,10 @@ public class Caretaker : MonoBehaviour
     {
         if (blockPlayerMovement) return;
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        if (direction != Vector3.zero) caretakerMesh.transform.forward = direction;
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
-        }
-
-        if (direction != Vector3.zero)
-        {
-            if (timeBtwTrails <= 0)
-            {
-                Instantiate(_movementParticles, _particlesPosition);
-
-                timeBtwTrails = 0.5f;
-            }
-            else
-            {
-                timeBtwTrails -= Time.deltaTime;
-            }
         }
     }
 
