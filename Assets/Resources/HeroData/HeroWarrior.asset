@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HeroWarrior
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 3131885922487269015, guid: 6f28bde2d13cabd47ae43920988f5527, type: 3}
-  timePerRoom: 5
+  timePerRoom: 15

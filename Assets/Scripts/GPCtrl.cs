@@ -59,6 +59,7 @@ public class GPCtrl : MonoBehaviour
 
     public void LaunchHero(HeroData data)
     {
+        UINotif.Pop("NEW WAVE");
         currentHero = Instantiate(data.heroPrefab);
         currentHero.data = data;
         currentHero.ExploreRoom(startRoom);
@@ -70,12 +71,18 @@ public class GPCtrl : MonoBehaviour
 
     public void EndWave(bool natural = true)
     {
-        int _score = currentHero.usedInteractableList.Count * 5;
+        int _score = currentHero.usedInteractableList.Count * 5 * 100;
         if (natural) _score *= 2;
         UINotif.Pop("SCORE : " + _score);
         scoreList.Add(_score);
-        Destroy(currentHero);
-        DOVirtual.DelayedCall(180f, () => LaunchHero(heroDataList[Random.Range(0, heroDataList.Count)]));
+        Destroy(currentHero.gameObject);
+        if (scoreList.Count <3)
+        {
+            DOVirtual.DelayedCall(15, () => LaunchHero(heroDataList[Random.Range(0, heroDataList.Count)]));
+        } else
+        {
+            GameWin();
+        }
     }
 
     public void GameOver()
