@@ -79,7 +79,7 @@ public class ArrowGames : MonoBehaviour
             arrowParent.DOMoveX(arrowParent.position.x - 2, .4f);
             stockArrows[currentArrow].SetActive(false);
             currentArrow++;
-            timer = 0.2f;
+            //timer = 0.2f;
         } else {
             timer = 1; // Pénalité
             Debug.Log("Erreur " + currentArrow);

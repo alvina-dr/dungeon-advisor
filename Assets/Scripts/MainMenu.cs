@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // load the scene after 0 (mainMenu)
+        SceneManager.LoadScene("Alvina"); // load the scene after 0 (mainMenu)
     }
 
     public void FullscreenToggle()

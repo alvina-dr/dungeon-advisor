@@ -62,6 +62,7 @@ public class Caretaker : MonoBehaviour
         if (direction != Vector3.zero) caretakerMesh.transform.forward = direction;
         if (Input.GetKeyDown(KeyCode.E))
         {
+            direction = Vector3.zero;
             Interact();
         }
 
