@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 814e26390a71b6b4b932d0ee5fa74a34
-  - enabled: 1
     path: Assets/Scenes/Alvina.unity
     guid: 9a32670b157db1643846d1e67d084fb0
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 814e26390a71b6b4b932d0ee5fa74a34
   - enabled: 1
     path: Assets/Scenes/TrapMinigame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
