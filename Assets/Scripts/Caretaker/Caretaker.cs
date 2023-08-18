@@ -32,7 +32,7 @@ public class Caretaker : MonoBehaviour
         if (currentRoom != null) currentRoom.virtualCamera.gameObject.SetActive(false); 
         currentRoom = _room;
         currentRoom.virtualCamera.gameObject.SetActive(true);
-        if (GPCtrl.instance.currentHero.currentRoom == _room)
+        if (GPCtrl.instance.currentHero != null && GPCtrl.instance.currentHero.currentRoom == _room)
         {
             GPCtrl.instance.GameOver();
         }

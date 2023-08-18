@@ -6,11 +6,12 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class WinLoseUI : MonoBehaviour
+public class UICtrl : MonoBehaviour
 {
     #region Fields
     [SerializeField] private UIWinMenu _winUI;
     [SerializeField] private GameObject _loseUI;
+    [SerializeField] private CanvasGroup _startUI;
     [SerializeField] private TextMeshProUGUI _scoreText;
     private Caretaker _caretaker;
     #endregion
@@ -81,6 +82,15 @@ public class WinLoseUI : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
     }
+
+    public void CloseStartMenu()
+    {
+        _startUI.DOFade(0, .3f).OnComplete(() =>
+        {
+            _startUI.gameObject.SetActive(false);
+            GPCtrl.instance.StartGame();
+        });
+    }
     #endregion
 
     #region Unity API
@@ -88,6 +98,7 @@ public class WinLoseUI : MonoBehaviour
     {
         _winUI.gameObject.SetActive(false);
         _loseUI.SetActive(false);
+        _startUI.gameObject.SetActive(true);
     }
 
     private void Start()

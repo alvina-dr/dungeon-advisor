@@ -15,7 +15,7 @@ public class GPCtrl : MonoBehaviour
     public Hero currentHero;
     public Caretaker caretaker;
     public Interactable currentInteractable;
-    public WinLoseUI _winLoseUI;
+    public UICtrl _winLoseUI;
     public UINotif UINotif;
     public List<int> scoreList;
 
@@ -44,7 +44,6 @@ public class GPCtrl : MonoBehaviour
         {
             roomList.Add(_rooms[i]);
         }
-        StartGame();
     }
 
     private void Update()

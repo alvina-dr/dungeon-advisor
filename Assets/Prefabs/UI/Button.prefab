@@ -215,6 +215,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2826975360898541034}
+  backgroundList:
+  - {fileID: 1993696426474237298}
+  - {fileID: 4757815120942788871}
+  - {fileID: 653664897026508706}
+  active: {r: 0.8784314, g: 0.40392157, b: 0.101960786, a: 1}
+  selected: {r: 0.6509804, g: 0.33333334, b: 0.12941177, a: 1}
 --- !u!1 &640532691850185024
 GameObject:
   m_ObjectHideFlags: 0
