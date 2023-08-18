@@ -10,7 +10,7 @@ public class WinLoseUI : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private GameObject _winUI;
+    [SerializeField] private UIWinMenu _winUI;
     
     [SerializeField] private GameObject _loseUI;
     [SerializeField] private TextMeshProUGUI _scoreText;
@@ -23,7 +23,7 @@ public class WinLoseUI : MonoBehaviour
 
     private void Awake()
     {
-        _winUI.SetActive(false);
+        _winUI.gameObject.SetActive(false);
         _loseUI.SetActive(false);
     }
 
@@ -39,20 +39,28 @@ public class WinLoseUI : MonoBehaviour
     public void SpawnWinGameUI()
     {
         _caretaker.blockPlayerMovement = true;
-
         _winUI.transform.localScale = Vector3.zero;
-        
-        _winUI.SetActive(true);
 
-        _winUI.transform.DOScale(1.1f, 0.4f);
-        _winUI.transform.DOScale(1, 0.4f);
-        int finalScore = 0;
-        for (int i = 0; i < GPCtrl.instance.scoreList.Count; i++)
+        _scoreText.gameObject.SetActive(false);
+        _winUI.gameObject.SetActive(true);
+        _winUI.transform.DOScale(1.1f, 0.4f).OnComplete(() =>
         {
-            finalScore += GPCtrl.instance.scoreList[i];
-        }
+            _winUI.transform.DOScale(1, 0.4f).OnComplete(() =>
+            {
+                _winUI.stampAnimation.Func_PlayUIAnim(false);
+                DOVirtual.DelayedCall(.4f, () =>
+                {
+                    int finalScore = 0;
+                    for (int i = 0; i < GPCtrl.instance.scoreList.Count; i++)
+                    {
+                        finalScore += GPCtrl.instance.scoreList[i];
+                    }
+                    _scoreText.text = finalScore.ToString();
+                    _scoreText.gameObject.SetActive(true);
+                });
+            });
+        });
 
-        _scoreText.text = finalScore.ToString();
     }
 
     public void SpawnLoseUI()
@@ -69,12 +77,12 @@ public class WinLoseUI : MonoBehaviour
 
     private void CloseUI()
     {
-        if (_winUI.activeInHierarchy)
+        if (_winUI.gameObject.activeInHierarchy)
         {
             _winUI.transform.DOScale(1.1f, 0.4f);
             _winUI.transform.DOScale(0f, 0.4f);
             
-            _winUI.SetActive(false);
+            _winUI.gameObject.SetActive(false);
         }
 
         if (_loseUI.activeInHierarchy)
@@ -90,7 +98,7 @@ public class WinLoseUI : MonoBehaviour
     {
         CloseUI();
 
-        if (!_winUI.activeInHierarchy || !_loseUI.activeInHierarchy)
+        if (!_winUI.gameObject.activeInHierarchy || !_loseUI.activeInHierarchy)
         {
             SceneManager.LoadScene(0);  
         }

@@ -50,6 +50,10 @@ public class GPCtrl : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            GameWin();
+        }
     }
 
     public void ResetTimer()
@@ -66,7 +70,7 @@ public class GPCtrl : MonoBehaviour
     }
 
     public void StartGame() {
-        LaunchHero(heroDataList[Random.Range(0, heroDataList.Count)]);
+        DOVirtual.DelayedCall(5f, () => LaunchHero(heroDataList[Random.Range(0, heroDataList.Count)]));
     }
 
     public void EndWave(bool natural = true)
