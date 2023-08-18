@@ -5,40 +5,25 @@ using Cinemachine;
 public class Caretaker : MonoBehaviour
 {
     #region Fields
-    
     public Vector3 direction;
-
     public float speed;
-    
     public Rigidbody rb;
-    
     public List<Interactable> interactableList;
-    
     public Room currentRoom;
-
     public float timeBtwTrails;
-
     public CinemachineBrain cinemachineBrain;
-
     public bool blockPlayerMovement = false;
-
     public GameObject caretakerMesh;
-
     public AudioSource footstepsSound;
-    
     #endregion
 
     #region Methods
     public void Interact()
     {
         if (interactableList[interactableList.Count - 1] == null) return;
-        
         if (interactableList[interactableList.Count - 1].activated) return;
-
         Interactable _interactable = interactableList[interactableList.Count - 1];
-        
         _interactable.Interact();
-        
         interactableList.Remove(_interactable);
     }
 
@@ -57,6 +42,7 @@ public class Caretaker : MonoBehaviour
     #region UnityAPI
     void Update()
     {
+        direction = Vector3.zero;
         if (blockPlayerMovement) return;
         direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         if (direction != Vector3.zero) caretakerMesh.transform.forward = direction;
@@ -66,7 +52,7 @@ public class Caretaker : MonoBehaviour
             Interact();
         }
 
-         if (direction != Vector3.zero)
+        if (direction != Vector3.zero)
         {
             footstepsSound.enabled = true;
         }

@@ -82,7 +82,7 @@ public class LootGame : MonoBehaviour
         loot2.SetActive(selectedLoot == loot2);
         loot3.SetActive(selectedLoot == loot3);
         hasSelectedLoot = true;
-        barre.transform.parent.gameObject.SetActive(true);
+        barre.gameObject.SetActive(true);
 
         // Lancer la coroutine pour déplacer l'indicateur
         StartCoroutine(MoveIndicator());

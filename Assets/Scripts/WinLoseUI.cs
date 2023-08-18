@@ -9,38 +9,17 @@ using TMPro;
 public class WinLoseUI : MonoBehaviour
 {
     #region Fields
-
     [SerializeField] private UIWinMenu _winUI;
-    
     [SerializeField] private GameObject _loseUI;
     [SerializeField] private TextMeshProUGUI _scoreText;
-
     private Caretaker _caretaker;
-
     #endregion
 
-    #region Init Methods
-
-    private void Awake()
-    {
-        _winUI.gameObject.SetActive(false);
-        _loseUI.SetActive(false);
-    }
-
-    private void Start()
-    {
-        _caretaker = GPCtrl.instance.caretaker;
-    }
-
-    #endregion
-
-    #region Logic Methods
-
+    #region Methods
     public void SpawnWinGameUI()
     {
         _caretaker.blockPlayerMovement = true;
         _winUI.transform.localScale = Vector3.zero;
-
         _scoreText.gameObject.SetActive(false);
         _winUI.gameObject.SetActive(true);
         _winUI.transform.DOScale(1.1f, 0.4f).OnComplete(() =>
@@ -66,11 +45,8 @@ public class WinLoseUI : MonoBehaviour
     public void SpawnLoseUI()
     {
         _caretaker.blockPlayerMovement = true;
-        
         _loseUI.transform.localScale = Vector3.zero;
-
         _loseUI.SetActive(true);
-
         _loseUI.transform.DOScale(1.1f, 0.4f);
         _loseUI.transform.DOScale(1, 0.4f);
     }
@@ -81,15 +57,12 @@ public class WinLoseUI : MonoBehaviour
         {
             _winUI.transform.DOScale(1.1f, 0.4f);
             _winUI.transform.DOScale(0f, 0.4f);
-            
             _winUI.gameObject.SetActive(false);
         }
-
         if (_loseUI.activeInHierarchy)
         {
             _loseUI.transform.DOScale(1.1f, 0.4f);
             _loseUI.transform.DOScale(0f, 0.4f);
-            
             _loseUI.SetActive(false);
         }
     }
@@ -97,7 +70,6 @@ public class WinLoseUI : MonoBehaviour
     public void BackToMainMenu()
     {
         CloseUI();
-
         if (!_winUI.gameObject.activeInHierarchy || !_loseUI.activeInHierarchy)
         {
             SceneManager.LoadScene(0);  
@@ -109,6 +81,18 @@ public class WinLoseUI : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
     }
+    #endregion
 
+    #region Unity API
+    private void Awake()
+    {
+        _winUI.gameObject.SetActive(false);
+        _loseUI.SetActive(false);
+    }
+
+    private void Start()
+    {
+        _caretaker = GPCtrl.instance.caretaker;
+    }
     #endregion
 }

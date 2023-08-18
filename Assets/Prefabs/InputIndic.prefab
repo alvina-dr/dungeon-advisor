@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.01}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6433495629182594294
@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 3716807978319794883}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38000003, z: 0.38000003}
+  m_LocalScale: {x: 7.12, y: 7.12, z: 7.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3010541821781721380}
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e3ae0cdadc76e84c8bdfea49395b22a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 787bb228c94be714e990b3c76128d50e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
