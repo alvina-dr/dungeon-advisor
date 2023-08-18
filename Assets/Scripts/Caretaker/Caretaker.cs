@@ -20,6 +20,7 @@ public class Caretaker : MonoBehaviour
     #region Methods
     public void Interact()
     {
+        if (interactableList.Count == 0) return;
         if (interactableList[interactableList.Count - 1] == null) return;
         if (interactableList[interactableList.Count - 1].activated) return;
         Interactable _interactable = interactableList[interactableList.Count - 1];

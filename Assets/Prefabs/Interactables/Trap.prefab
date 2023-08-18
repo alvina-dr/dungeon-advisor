@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  particle: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
   activatedModel: {fileID: 527286793542514613}
   deactivatedModel: {fileID: 1729746905440675486}
 --- !u!1001 &833207001215797988
