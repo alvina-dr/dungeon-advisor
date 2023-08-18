@@ -10,11 +10,11 @@ public class Loot : Interactable
 
     public override void Interact()
     {
-        //SceneManager.LoadScene("TrapMinigame", LoadSceneMode.Additive);
-        //GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(false);
-        //GPCtrl.instance.caretaker.blockPlayerMovement = true;
-        //GPCtrl.instance.currentInteractable = this;
-        Activate();
+        SceneManager.LoadScene("MG_Loot", LoadSceneMode.Additive);
+        GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(false);
+        GPCtrl.instance.caretaker.blockPlayerMovement = true;
+        GPCtrl.instance.currentInteractable = this;
+        //Activate();
     }
 
     public override void Activate()

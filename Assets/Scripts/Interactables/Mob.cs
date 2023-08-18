@@ -7,9 +7,10 @@ public class Mob : Interactable
 {
     public GameObject activatedModel;
     public GameObject deactivatedModel;
+
     public override void Interact()
     {
-        SceneManager.LoadScene("Emma", LoadSceneMode.Additive);
+        SceneManager.LoadScene("MG_Spam", LoadSceneMode.Additive);
         GPCtrl.instance.caretaker.currentRoom.virtualCamera.gameObject.SetActive(false);
         GPCtrl.instance.caretaker.blockPlayerMovement = true;
         GPCtrl.instance.currentInteractable = this;
